@@ -36,6 +36,7 @@ package com.videojs{
         private var _backgroundColor:Number = 0;
         private var _backgroundAlpha:Number = 0;
         private var _volume:Number = 1;
+		private var _bufferTime:Number = 1;
         private var _autoplay:Boolean = false;
         private var _preload:String = "auto";
         private var _loop:Boolean = false;
@@ -617,7 +618,17 @@ package com.videojs{
                     broadcastEventExternally(ExternalErrorEventName.UNSUPPORTED_MODE);
             }
         }
-    }
+
+		public function get bufferTime():Number
+		{
+			return _bufferTime;
+		}
+
+		public function set bufferTime( value:Number ):void
+		{
+			_bufferTime = value;
+		}
+	}
 }
 
 

@@ -476,7 +476,7 @@ package com.videojs.providers{
             _ns.inBufferSeek = true;
             _ns.addEventListener(NetStatusEvent.NET_STATUS, onNetStreamStatus);
             _ns.client = this;
-            _ns.bufferTime = .5;
+            _ns.bufferTime = _model.bufferTime;
             _ns.play(_src.path);
             _ns.pause();
             _videoReference.attachNetStream(_ns);
