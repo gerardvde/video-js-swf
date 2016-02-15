@@ -5,6 +5,8 @@ CHANGELOG
 _(none)_
 
 --------------------
+## 5.0.2 (2016-02-15)
+* 
 
 ## 5.0.1 (2015-11-06)
 * Fix an issue where the player would not report is was seeking after ending ([view](https://github.com/videojs/video-js-swf/pull/192))
