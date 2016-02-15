@@ -452,5 +452,14 @@ package com.videojs.providers{
             }
             _model.broadcastEventExternally(ExternalEventName.ON_METADATA, _metadata);
         }
-    }
+
+		public function get bufferTime():Number
+		{
+			return 0;
+		}
+		public function set bufferTime( bufferTime:Number ):void
+		{
+
+		}
+	}
 }

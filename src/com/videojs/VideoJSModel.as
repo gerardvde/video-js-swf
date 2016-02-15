@@ -595,6 +595,7 @@ package com.videojs{
                         _provider = new HTTPVideoProvider();
                         _provider.attachVideo(_videoReference);
                         _provider.init(__src, _autoplay);
+						_provider.bufferTime=_bufferTime;
                     }
                     else if(_currentPlaybackType == PlaybackType.RTMP){
                         __src = {
@@ -604,6 +605,7 @@ package com.videojs{
                         _provider = new RTMPVideoProvider();
                         _provider.attachVideo(_videoReference);
                         _provider.init(__src, _autoplay);
+						_provider.bufferTime=_bufferTime;
                     }
 
                     break;
@@ -621,12 +623,19 @@ package com.videojs{
 
 		public function get bufferTime():Number
 		{
+			if(_provider!=null)
+				return _provider.bufferTime;
 			return _bufferTime;
 		}
 
 		public function set bufferTime( value:Number ):void
 		{
 			_bufferTime = value;
+			if(_provider!=null)
+			{
+				_provider.bufferTime=_bufferTime
+			}
+
 		}
 	}
 }

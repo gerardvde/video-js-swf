@@ -150,7 +150,9 @@
           e.preventDefault();
         }
         var el = $("#videoPlayer")[0];
-        // el.vjs_setProperty("eventProxyFunction", "onSWFEvent");
+        el.vjs_setProperty("eventProxyFunction", "onSWFEvent");
+		 el.vjs_setProperty("bufferTime", 20);
+		  el.vjs_setProperty("volume", 1);
         // el.vjs_setProperty("errorEventProxyFunction", "onSWFErrorEvent");
       }
 
@@ -159,7 +161,7 @@
           e.preventDefault();
         }
         var el = $("#videoPlayer")[0];
-        el.vjs_src("http://video-js.zencoder.com/oceans-clip.mp4?");
+        el.vjs_src("../videos/SampleVideo_720x480_10mb.mp4?");
       }
 
       function playVideo(e){
@@ -193,6 +195,10 @@
       }
 
       function onSWFEvent(swfID, eventName){
+		 console.log('onswfEvent->'+eventName)
+		  var el = $("#videoPlayer")[0];
+		 var bufferTime= el.vjs_getProperty('bufferTime' ).toString();
+		console.log('buffertime'+bufferTime)
         var $el = $("#events");
         var time = new Date();
         $el.append(pad2(time.getHours()) + ":" + pad2(time.getMinutes()) + ":" + pad2(time.getSeconds()) + " - " + eventName + "<br/>");
@@ -229,7 +235,7 @@
         $propEnded.html(el.vjs_getProperty("ended").toString());
         $propPaused.html(el.vjs_getProperty("paused").toString());
         $propMuted.html(el.vjs_getProperty("muted").toString());
-        $propVolume.html(el.vjs_getProperty("volume"));
+        $propVolume.html(el.vjs_getProperty("bufferTime"));
         $propSeeking.html(el.vjs_getProperty("seeking").toString());
         $propNetworkState.html(el.vjs_getProperty("networkState"));
         $propReadyState.html(el.vjs_getProperty("readyState"));
