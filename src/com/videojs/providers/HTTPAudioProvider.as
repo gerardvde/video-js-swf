@@ -461,5 +461,14 @@ package com.videojs.providers{
 		{
 
 		}
+
+		public function set bufferTimeMax( time:Number ):void
+		{
+		}
+
+		public function get bufferTimeMax():Number
+		{
+			return 0;
+		}
 	}
 }

@@ -291,6 +291,9 @@ package
 				case "bufferTime":
 					return _app.model.bufferTime;
 					break;
+				case "bufferTimeMax":
+					return _app.model.bufferTimeMax;
+					break;
 				case "muted":
 					return _app.model.muted;
 					break;
@@ -385,6 +388,9 @@ package
 					break;
 				case "bufferTime":
 					_app.model.bufferTime = Number( pValue );
+					break;
+				case "bufferTimeMax":
+					_app.model.bufferTimeMax = Number( pValue );
 					break;
 				case "rtmpConnection":
 					_app.model.rtmpConnectionURL = String( pValue );

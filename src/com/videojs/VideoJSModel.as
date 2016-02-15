@@ -37,6 +37,7 @@ package com.videojs{
         private var _backgroundAlpha:Number = 0;
         private var _volume:Number = 1;
 		private var _bufferTime:Number = 1;
+		private var _bufferTimeMax:Number=1;
         private var _autoplay:Boolean = false;
         private var _preload:String = "auto";
         private var _loop:Boolean = false;
@@ -627,16 +628,32 @@ package com.videojs{
 				return _provider.bufferTime;
 			return _bufferTime;
 		}
-
 		public function set bufferTime( value:Number ):void
+			{
+				_bufferTime = value;
+				if(_provider!=null)
+				{
+					_provider.bufferTime=_bufferTime
+				}
+
+			}
+		public function set bufferTimeMax( value:Number ):void
 		{
-			_bufferTime = value;
+			_bufferTimeMax = value;
 			if(_provider!=null)
 			{
-				_provider.bufferTime=_bufferTime
+				_provider.bufferTimeMax=_bufferTimeMax
 			}
 
 		}
+		public function get bufferTimeMax():Number
+				{
+					if(_provider!=null)
+						return _provider.bufferTimeMax;
+					return _bufferTimeMax;
+				}
+
+
 	}
 }
 

@@ -25,6 +25,11 @@ package com.videojs.providers
 		/**
 		 * sets the bufferTime for RTMP and HTPP Videoprovider.
 		 */
+		function set bufferTimeMax( time:Number ):void;
+
+				/**
+				 * sets the bufferTimeMax for RTMP and HTPP Videoprovider.
+				 */
 		function get time():Number;
 
 		/**
@@ -91,7 +96,14 @@ package com.videojs.providers
 		function get bufferTime():Number;
 
 		/**
-		 * Should return the bufferTime fro a netstream (HTTP or RTMP)
+		 * Should return the bufferTime for a netstream (HTTP or RTMP)
+		 * this value is unknown or unable to be calculated (due to streaming, bitrate switching, etc)
+		 */
+
+		function get bufferTimeMax():Number;
+
+		/**
+		 * Should return the bufferTimeMAx for a netstream (HTTP or RTMP)
 		 * this value is unknown or unable to be calculated (due to streaming, bitrate switching, etc)
 		 */
 		function get bytesLoaded():int;

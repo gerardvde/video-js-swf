@@ -51,7 +51,8 @@ package com.videojs.providers
 		private var _loop:Boolean = false;
 
 		private var _model:VideoJSModel;
-		private var _bufferTime:Number=1;
+		private var _bufferTime:Number = 1;
+		private var _bufferTimeMax:Number = 1;
 
 		public function RTMPVideoProvider()
 		{
@@ -428,14 +429,34 @@ package com.videojs.providers
 			}
 			return 0;
 		}
+
 		public function set bufferTime( bufferTime:Number ):void
+		{
+			_bufferTime = bufferTime;
+			if( _ns != null )
+			{
+				_ns.bufferTime = _bufferTime
+			}
+		}
+
+		public function get bufferTimeMax():Number
 		{
 			if( _ns != null )
 			{
-			 _ns.bufferTime = bufferTime
+				return _ns.bufferTimeMax;
 			}
-			_bufferTime =bufferTime;
+			return 0;
 		}
+
+		public function set bufferTimeMax( bufferTimeMax:Number ):void
+		{
+			_bufferTimeMax = bufferTimeMax;
+			if( _ns != null )
+			{
+				_ns.bufferTimeMax = _bufferTimeMax;
+			}
+		}
+
 		public function die():void
 		{
 			if( _videoReference )

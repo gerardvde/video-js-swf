@@ -89,6 +89,7 @@ package com.videojs.providers
 		private var _durationOverride:Number;
 
 		private var _model:VideoJSModel;
+		private var _bufferTimeMax:Number=0.5;
 
 		public function HTTPVideoProvider()
 		{
@@ -845,5 +846,22 @@ package com.videojs.providers
 			 _ns.bufferTime = _bufferTime
 			}
 		}
+		public function get bufferTimeMax():Number
+				{
+					if( _ns != null )
+					{
+						return _ns.bufferTimeMax;
+					}
+					return 0;
+				}
+
+				public function set bufferTimeMax( bufferTimeMax:Number ):void
+				{
+					_bufferTimeMax = bufferTimeMax;
+					if( _ns != null )
+					{
+						_ns.bufferTimeMax = _bufferTimeMax;
+					}
+				}
 	}
 }
