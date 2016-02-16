@@ -151,8 +151,9 @@
         }
         var el = $("#videoPlayer")[0];
         el.vjs_setProperty("eventProxyFunction", "onSWFEvent");
-		 el.vjs_setProperty("bufferTime", 20);
-		  el.vjs_setProperty("volume", 1);
+		el.vjs_setProperty("bufferTime", 5);
+		el.vjs_setProperty("bufferTimeMax", 7);
+		el.vjs_setProperty("volume", 1);
         // el.vjs_setProperty("errorEventProxyFunction", "onSWFErrorEvent");
       }
 
@@ -236,7 +237,7 @@
         $propPaused.html(el.vjs_getProperty("paused").toString());
         $propMuted.html(el.vjs_getProperty("muted").toString());
         $propVolume.html(el.vjs_getProperty("bufferTime"));
-        $propSeeking.html(el.vjs_getProperty("seeking").toString());
+        $propSeeking.html(el.vjs_getProperty("bufferTimeMax"));
         $propNetworkState.html(el.vjs_getProperty("networkState"));
         $propReadyState.html(el.vjs_getProperty("readyState"));
         $propBufferedBytesStart.html(el.vjs_getProperty("bufferedBytesStart"));
@@ -315,11 +316,11 @@
                     <td class="value" id="propMuted">n/a</td>
                   </tr>
                   <tr>
-                    <td class="prop">volume</td>
+                    <td class="prop">buffertime</td>
                     <td class="value" id="propVolume">n/a</td>
                   </tr>
                   <tr>
-                    <td class="prop">seeking</td>
+                    <td class="prop">buffertimeMax</td>
                     <td class="value" id="propSeeking">n/a</td>
                   </tr>
                   <tr>

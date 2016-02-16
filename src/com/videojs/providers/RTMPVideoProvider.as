@@ -52,7 +52,7 @@ package com.videojs.providers
 
 		private var _model:VideoJSModel;
 		private var _bufferTime:Number = 1;
-		private var _bufferTimeMax:Number = 1;
+		private var _bufferTimeMax:Number = 5;
 
 		public function RTMPVideoProvider()
 		{
@@ -557,6 +557,7 @@ package com.videojs.providers
 			_ns.addEventListener( NetStatusEvent.NET_STATUS, onNetStreamStatus );
 			_ns.client = this;
 			_ns.bufferTime = _bufferTime;
+			_ns.bufferTimeMax = _bufferTimeMax;
 			_ns.play( _src.streamURL );
 			_videoReference.attachNetStream( _ns );
 			_model.broadcastEventExternally( ExternalEventName.ON_LOAD_START );

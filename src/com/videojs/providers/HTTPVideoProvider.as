@@ -83,13 +83,13 @@ package com.videojs.providers
 		private var _isLive:Boolean = false;
 		private var _canSeekAhead:Boolean = false;
 		private var _hasEnded:Boolean = false;
-		private var _bufferTime:Number=0.5
+		private var _bufferTime:Number = 0.5
 		private var _canPlayThrough:Boolean = false;
 		private var _loop:Boolean = false;
 		private var _durationOverride:Number;
 
 		private var _model:VideoJSModel;
-		private var _bufferTimeMax:Number=0.5;
+		private var _bufferTimeMax:Number = 1;
 
 		public function HTTPVideoProvider()
 		{
@@ -582,6 +582,7 @@ package com.videojs.providers
 			_ns.addEventListener( NetStatusEvent.NET_STATUS, onNetStreamStatus );
 			_ns.client = this;
 			_ns.bufferTime = _bufferTime;
+			_ns.bufferTimeMax = _bufferTimeMax;
 			_ns.play( _src.path );
 			_ns.pause();
 			_videoReference.attachNetStream( _ns );
@@ -840,28 +841,29 @@ package com.videojs.providers
 
 		public function set bufferTime( bufferTime:Number ):void
 		{
-			_bufferTime =bufferTime;
+			_bufferTime = bufferTime;
 			if( _ns != null )
 			{
-			 _ns.bufferTime = _bufferTime
+				_ns.bufferTime = _bufferTime
 			}
 		}
-		public function get bufferTimeMax():Number
-				{
-					if( _ns != null )
-					{
-						return _ns.bufferTimeMax;
-					}
-					return 0;
-				}
 
-				public function set bufferTimeMax( bufferTimeMax:Number ):void
-				{
-					_bufferTimeMax = bufferTimeMax;
-					if( _ns != null )
-					{
-						_ns.bufferTimeMax = _bufferTimeMax;
-					}
-				}
+		public function get bufferTimeMax():Number
+		{
+			if( _ns != null )
+			{
+				return _ns.bufferTimeMax;
+			}
+			return _bufferTimeMax;
+		}
+
+		public function set bufferTimeMax( bufferTimeMax:Number ):void
+		{
+			_bufferTimeMax = bufferTimeMax;
+			if( _ns != null )
+			{
+				_ns.bufferTimeMax = _bufferTimeMax;
+			}
+		}
 	}
 }
