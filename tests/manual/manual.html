@@ -154,7 +154,7 @@
 		el.vjs_setProperty("bufferTime", 5);
 		el.vjs_setProperty("bufferTimeMax", 7);
 		el.vjs_setProperty("volume", 1);
-        // el.vjs_setProperty("errorEventProxyFunction", "onSWFErrorEvent");
+        el.vjs_setProperty("errorEventProxyFunction", "onSWFErrorEvent");
       }
 
       function setSource(e){
@@ -162,7 +162,8 @@
           e.preventDefault();
         }
         var el = $("#videoPlayer")[0];
-        el.vjs_src("../videos/SampleVideo_720x480_10mb.mp4?");
+       // el.vjs_src("../videos/SampleVideo_720x480_10mb.mp4?");
+		  el.vjs_src("../videos/SampleVideo_720x480_5mb.flv?");
       }
 
       function playVideo(e){

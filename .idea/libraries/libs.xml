@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/flexunit-cilistener-4.1.0-8-4.1.0.16076.swc!/" />
+      <root url="jar://$PROJECT_DIR$/libs/flexunit-uilistener-4.1.0-8-4.1.0.16076.swc!/" />
+      <root url="jar://$PROJECT_DIR$/libs/flexunit-flexcoverlistener-4.1.0-8-4.1.0.16076.swc!/" />
+      <root url="jar://$PROJECT_DIR$/libs/fluint-extensions-4.1.0-8-4.1.0.16076.swc!/" />
+      <root url="jar://$PROJECT_DIR$/libs/flexunit-4.1.0-8-as3_4.1.0.16076.swc!/" />
+      <root url="jar://$PROJECT_DIR$/libs/flexunit-4.1.0-8-flex_4.1.0.16076.swc!/" />
+      <root url="jar://$PROJECT_DIR$/libs/flexunit-aircilistener-4.1.0-8-4.1.0.16076.swc!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
