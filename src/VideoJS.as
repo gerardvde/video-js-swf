@@ -127,14 +127,22 @@ package
 			_app.model.jsEventProxyName = 'videojs.Flash.onEvent';
 			_app.model.jsErrorEventProxyName = 'videojs.Flash.onError';
 
-			/*if(loaderInfo.parameters.eventProxyFunction != undefined){
-			 _app.model.jsEventProxyName = loaderInfo.parameters.eventProxyFunction;
-			 }
-
-			 if(loaderInfo.parameters.errorEventProxyFunction != undefined){
-			 _app.model.jsErrorEventProxyName = loaderInfo.parameters.errorEventProxyFunction;
-			 }*/
-
+			if( loaderInfo.parameters.eventProxyFunction != undefined )
+			{
+				_app.model.jsEventProxyName = loaderInfo.parameters.eventProxyFunction;
+			}
+			if( loaderInfo.parameters.errorEventProxyFunction != undefined )
+			{
+				_app.model.jsErrorEventProxyName = loaderInfo.parameters.errorEventProxyFunction;
+			}
+			if( loaderInfo.parameters.bufferTime != undefined && loaderInfo.parameters.bufferTime != "" )
+			{
+				_app.model.bufferTime = loaderInfo.parameters.bufferTime;
+			}
+			if( loaderInfo.parameters.bufferTimeMax != undefined && loaderInfo.parameters.bufferTimeMax != "" )
+			{
+				_app.model.bufferTimeMax = loaderInfo.parameters.bufferTimeMax;
+			}
 			if( loaderInfo.parameters.autoplay != undefined && loaderInfo.parameters.autoplay == "true" )
 			{
 				_app.model.autoplay = true;

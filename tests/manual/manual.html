@@ -123,6 +123,8 @@
           src: "",
           autoplay: false,
           preload: 'none',
+			bufferTime: 0.6,
+			bufferTimeMax: 1
         };
 
         var params = {
@@ -151,8 +153,8 @@
         }
         var el = $("#videoPlayer")[0];
         el.vjs_setProperty("eventProxyFunction", "onSWFEvent");
-		el.vjs_setProperty("bufferTime", 5);
-		el.vjs_setProperty("bufferTimeMax", 7);
+		//el.vjs_setProperty("bufferTime", 5);
+		//el.vjs_setProperty("bufferTimeMax", 7);
 		el.vjs_setProperty("volume", 1);
         el.vjs_setProperty("errorEventProxyFunction", "onSWFErrorEvent");
       }
