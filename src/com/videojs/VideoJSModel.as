@@ -38,8 +38,8 @@ package com.videojs
 		private var _backgroundColor:Number = 0;
 		private var _backgroundAlpha:Number = 0;
 		private var _volume:Number = 1;
-		private var _bufferTime:Number = 0.6;
-		private var _bufferTimeMax:Number = 1;
+		private var _bufferTime:Number = 0;
+		private var _bufferTimeMax:Number = 0.6;
 		private var _autoplay:Boolean = false;
 		private var _preload:String = "auto";
 		private var _loop:Boolean = false;
@@ -810,6 +810,15 @@ package com.videojs
 			}
 			return _bufferTimeMax;
 		}
+
+		public function get bufferLength():Number
+				{
+					if( _provider != null )
+					{
+						return _provider.bufferLength;
+					}
+					return 0;
+				}
 
 
 	}

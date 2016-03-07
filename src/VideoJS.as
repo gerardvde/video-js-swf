@@ -302,6 +302,9 @@ package
 				case "bufferTimeMax":
 					return _app.model.bufferTimeMax;
 					break;
+				case "bufferLength":
+					return _app.model.bufferLength;
+					break;
 				case "muted":
 					return _app.model.muted;
 					break;

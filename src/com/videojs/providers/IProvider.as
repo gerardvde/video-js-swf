@@ -93,8 +93,12 @@ package com.videojs.providers
 		 * Should return the number of bytes that have been loaded thus far, or 0 if
 		 * this value is unknown or unable to be calculated (due to streaming, bitrate switching, etc)
 		 */
+		function get bufferLength():Number;
+		/**
+		 * Should return the number of bytes that have been loaded thus far, or 0 if
+		 * this value is unknown or unable to be calculated (due to streaming, bitrate switching, etc)
+		 */
 		function get bufferTime():Number;
-
 		/**
 		 * Should return the bufferTime for a netstream (HTTP or RTMP)
 		 * this value is unknown or unable to be calculated (due to streaming, bitrate switching, etc)
